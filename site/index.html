@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Builders Wall · DVB</title>
+  <meta name="description" content="The participants' wall of the DeVinci Blockchain Git & GitHub Workshop: every card arrived through a Pull Request.">
+  <link rel="icon" href="assets/logo_white.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stage">
+    <header class="top">
+      <img class="logo" src="assets/dvb_full_white.png" alt="DeVinci Blockchain">
+      <div class="live" aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="live__label">Live</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <span><b id="count">0</b> <span id="count-label">builders</span></span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__title">
+        <p class="kicker">Git &amp; GitHub Workshop · DVB</p>
+        <h1>Builders <span class="accent">Wall</span></h1>
+      </div>
+      <div class="hero__how">
+        <p class="how">
+          <span class="cmd">fork</span><i>→</i><span class="cmd">branch</span><i>→</i><span class="cmd">commit</span><i>→</i><span class="cmd">push</span><i>→</i><span class="cmd">pull request</span>
+        </p>
+        <a class="repo" id="repo-link" href="https://github.com/alibenyezza/dvb-git-workshop">github.com/alibenyezza/dvb-git-workshop</a>
+      </div>
+    </section>
+
+    <main>
+      <ul class="grid" id="grid" aria-label="Participants"></ul>
+      <p class="empty" id="empty" hidden>The wall is waiting for its first builder… Open your Pull Request!</p>
+      <p class="status" id="status" hidden></p>
+    </main>
+
+    <footer class="foot">
+      <span>Every card arrived through a Pull Request, was checked by GitHub Actions and deployed on GitHub Pages.</span>
+      <span class="foot__brand">By DVB</span>
+    </footer>
+  </div>
+
+  <template id="card-tpl">
+    <li class="card">
+      <a class="card__link" target="_blank" rel="noopener noreferrer">
+        <div class="card__head">
+          <div class="avatar">
+            <img alt="" loading="lazy" referrerpolicy="no-referrer">
+            <span class="avatar__fallback" aria-hidden="true"></span>
+          </div>
+          <div class="who">
+            <h2 class="name"></h2>
+            <p class="handle"></p>
+          </div>
+          <span class="emoji" aria-hidden="true"></span>
+        </div>
+        <p class="meta"><span class="school"></span><span class="role"></span></p>
+        <p class="message"></p>
+      </a>
+    </li>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

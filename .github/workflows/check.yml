@@ -1,0 +1,21 @@
+# Checks the cards of every Pull Request.
+# The job name ("validate") is the one to require in the branch protection of main.
+name: check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check the cards builders/*.json
+        run: node scripts/validate.mjs
